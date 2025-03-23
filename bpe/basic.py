@@ -21,7 +21,6 @@ class BasicTokenizer:
     @staticmethod
     def most_common_pair(text):
         pairs = BasicTokenizer.pair_counts(text)
-        print(pairs)
         return max(pairs, key=pairs.get)
     
     @staticmethod
