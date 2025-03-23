@@ -1,4 +1,4 @@
-from bpe.basic import BasicTokenizer
+from bpe import BasicTokenizer
 
 def test_basic():
     tokenizer = BasicTokenizer()
