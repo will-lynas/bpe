@@ -16,7 +16,7 @@ class BasicTokenizer:
             pair = most_common_pair(tokens)
             token = 256 + i
             if verbose:
-                print(f"Merging {pair[0], pair[1]} into {token}")
+                print(f"Merge {i}/{num_merges}: {pair[0], pair[1]} -> {token}")
             tokens = merge(tokens, pair, token)
             self.to_pairs[token] = pair
             self.from_pairs[pair] = token
