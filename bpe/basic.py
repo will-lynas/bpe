@@ -11,6 +11,8 @@ class BasicTokenizer:
         tokens = encode_text(text)
         num_merges = vocab_size - 256
         for i in range(num_merges):
+            if len(tokens) < 2:
+                break
             pair = most_common_pair(tokens)
             token = 256 + i
             if verbose:

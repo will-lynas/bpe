@@ -4,9 +4,10 @@ from tests.utils import test_strings, unpack
 
 from bpe import BasicTokenizer
 
-def test_basic():
-    tokenizer = BasicTokenizer()
-    text = "hello world"
+@pytest.mark.parametrize("tokenizer_factory", [BasicTokenizer])
+@pytest.mark.parametrize("text", test_strings)
+def test_train_works(tokenizer_factory, text):
+    tokenizer = tokenizer_factory()
     tokenizer.train(text, vocab_size=256 + 5)
     
 @pytest.mark.parametrize("tokenizer_factory", [BasicTokenizer])
